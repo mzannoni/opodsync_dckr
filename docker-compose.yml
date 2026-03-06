@@ -11,7 +11,7 @@ services:
       - ./data:/var/www/html/data   # persistent: SQLite DB + config.local.php
     environment:
       # Alternatively set BASE_URL in config.local.php
-      - BASE_URL=https://podo.baluardo.fotobill.com
+      # - BASE_URL=<server_url>
     user: "33:33"                   # www-data uid:gid on Debian; ensures volume writes as www-data
     ports:
       - "8765:80"
