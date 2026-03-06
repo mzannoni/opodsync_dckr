@@ -1,0 +1,25 @@
+services:
+  opodsync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        OPODSYNC_VERSION: main   # pin to a commit hash for reproducibility
+    container_name: opodsync
+    restart: unless-stopped
+    volumes:
+      - ./data:/var/www/html/data   # persistent: SQLite DB + config.local.php
+    environment:
+      # Alternatively set BASE_URL in config.local.php
+      - BASE_URL=https://podo.baluardo.fotobill.com
+    user: "33:33"                   # www-data uid:gid on Debian; ensures volume writes as www-data
+    ports:
+      - "8765:80"
+    # If Pangolin running with docker is used to expose the server and is running on the same machine, the following is to make them see each other
+    # networks:
+    #   - pangolin
+
+# This is necessary if Pangolin running as docker on the same machine needs to see this server
+# networks:
+#   pangolin:
+#     external: true
