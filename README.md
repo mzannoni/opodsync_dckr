@@ -1,4 +1,6 @@
-# GPodder compatible sync server
+# GPodder-compatible sync server
+
+Docker Compose configuration to deploy [oPodSync](https://github.com/kd2org/opodsync/).
 
 Ref. doc: https://github.com/kd2org/opodsync/blob/main/README.md
 
