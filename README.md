@@ -30,3 +30,9 @@ sudo chown 33:33 data
 docker compose build
 docker compose up -d
 ```
+
+# Docker Hub Image
+
+Images also available in a Docker Hub repository: [billznn/opodsync_dckr](https://hub.docker.com/r/billznn/opodsync_dckr)
+
+Those are built for both `linux/amd64` and `linux/arm64` directly from this repository.
